@@ -6,7 +6,7 @@ bitlbee -F
 CMDS=""
 
 add_cmd() {
-    CMD=${1}
+    local CMD=${1}
     CMDS="${CMDS}${CMD};"
 }
 
@@ -55,12 +55,12 @@ add_cmd "/server add facebook 127.0.0.1/6667"
 BITLBEE_CMDS=""
 
 add_bitlbee_cmd() {
-    CMD=${1}
+    local CMD=${1}
     BITLBEE_CMDS="${BITLBEE_CMDS}${CMD}\;"
 }
 
 add_bitlbee_msg_cmd() {
-    CMD=${1}
+    local CMD=${1}
     add_bitlbee_cmd "/msg -server facebook &facebook ${CMD}"
 }
 
