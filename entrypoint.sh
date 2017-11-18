@@ -1,5 +1,17 @@
 #!/bin/sh
 
+check_env_var() {
+    local VALUE="$1"
+    local ERROR_MSG="$2"
+    if [ -z "${VALUE}" ]; then
+        echo "${ERROR_MSG}";
+        exit 1;
+    fi;
+}
+
+check_env_var "${FULL_NAME}" 'USERNAME is missing.'
+check_env_var "${EMAIL}" 'PASSWORD is missing.'
+
 # Start BitlBee server
 bitlbee -F
 
