@@ -9,8 +9,8 @@ check_env_var() {
     fi;
 }
 
-check_env_var "${FULL_NAME}" 'USERNAME is missing.'
-check_env_var "${EMAIL}" 'PASSWORD is missing.'
+check_env_var "${USERNAME}" 'USERNAME is missing.'
+check_env_var "${PASSWORD}" 'PASSWORD is missing.'
 
 # Start BitlBee server
 bitlbee -F
