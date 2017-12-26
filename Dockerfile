@@ -1,5 +1,5 @@
 FROM alpine:edge
-MAINTAINER Bence SZIGETI <gohyda@gohyda.com>
+MAINTAINER Bence SZIGETI <bence.szigeti@gohyda.com>
 
 RUN echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> \
     /etc/apk/repositories
