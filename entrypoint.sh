@@ -9,8 +9,9 @@ check_env_var() {
     fi;
 }
 
-check_env_var "${USERNAME}" 'USERNAME is missing.'
-check_env_var "${PASSWORD}" 'PASSWORD is missing.'
+check_env_var "${FB_USERNAME}" 'FB_USERNAME is missing.'
+check_env_var "${FB_PASSWORD}" 'FB_PASSWORD is missing.'
+check_env_var "${IRC_NICK}" 'IRC_NICK is missing.'
 
 # Start BitlBee server
 bitlbee -F
@@ -56,8 +57,7 @@ add_cmd "/set irc.ctcp.version \"\""
 add_cmd "/set irc.ctcp.ping \"\""
 
 # Nick
-NICK=`echo ${USERNAME} | sed 's/[^0-9a-zA-Z_-]/_/g'`
-add_cmd "/set irc.server_default.nicks ${NICK}"
+add_cmd "/set irc.server_default.nicks ${IRC_NICK}"
 add_cmd "/set irc.server_default.nicks_alternate off"
 
 # Server
@@ -80,7 +80,7 @@ add_bitlbee_cmd "/join -server facebook &facebook"
 add_bitlbee_msg_cmd "set utf8_nicks on"
 add_bitlbee_msg_cmd "chan &bitlbee set show_users \"\""
 add_bitlbee_msg_cmd "chan &facebook set show_users online+,away+,offline"
-add_bitlbee_msg_cmd "account add facebook ${USERNAME} ${PASSWORD}"
+add_bitlbee_msg_cmd "account add facebook ${FB_USERNAME} ${FB_PASSWORD}"
 add_bitlbee_msg_cmd "account facebook set mark_read false"
 add_bitlbee_msg_cmd "account facebook set mark_read_reply true"
 add_bitlbee_msg_cmd "account facebook set show_unread true"

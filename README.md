@@ -7,8 +7,9 @@ The CLI is a preconfigured IRC client ([WeeChat](https://weechat.org/)) which is
 ### Usage
 ```sh
 docker run -ti --rm \
-    -e USERNAME="facebook_username" \
-    -e PASSWORD="facebook_password" \
+    -e FB_USERNAME="facebook_username" \
+    -e FB_PASSWORD="facebook_password" \
+    -e IRC_NICK="nick" \
     bszigeti/fb-chat-cli
 ```
 
